@@ -120,7 +120,7 @@ def recommend_resume(job_description, resume_embeddings, resumes_1):
     cosine_similarities = cosine_similarity(
         jd_embedding_2d, resume_embeddings_flat)
 
-    sorted_indices = np.argsort(cosine_similarities[0])[::1]
+    sorted_indices = np.argsort(cosine_similarities[0])[::-1]
 
     top_5_indices = sorted_indices[:5]
     top_5_similarities = cosine_similarities[0][top_5_indices]
